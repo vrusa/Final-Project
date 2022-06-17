@@ -1,0 +1,408 @@
+.snowflake {
+  color: rgb(185, 252, 235);
+  font-size: 1em;
+  font-family: Arial;
+  text-shadow: 0 0 1px #000;
+}
+
+@-webkit-keyframes snowflakes-fall{0%{top:-10%}100%{top:100%}}@-webkit-keyframes snowflakes-shake{0%{-webkit-transform:translateX(0px);transform:translateX(0px)}50%{-webkit-transform:translateX(80px);transform:translateX(80px)}100%{-webkit-transform:translateX(0px);transform:translateX(0px)}}@keyframes snowflakes-fall{0%{top:-10%}100%{top:100%}}@keyframes snowflakes-shake{0%{transform:translateX(0px)}50%{transform:translateX(80px)}100%{transform:translateX(0px)}}.snowflake{position:fixed;top:-10%;z-index:9999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;cursor:default;-webkit-animation-name:snowflakes-fall,snowflakes-shake;-webkit-animation-duration:10s,3s;-webkit-animation-timing-function:linear,ease-in-out;-webkit-animation-iteration-count:infinite,infinite;-webkit-animation-play-state:running,running;animation-name:snowflakes-fall,snowflakes-shake;animation-duration:10s,3s;animation-timing-function:linear,ease-in-out;animation-iteration-count:infinite,infinite;animation-play-state:running,running}.snowflake:nth-of-type(0){left:1%;-webkit-animation-delay:0s,0s;animation-delay:0s,0s}.snowflake:nth-of-type(1){left:10%;-webkit-animation-delay:1s,1s;animation-delay:1s,1s}.snowflake:nth-of-type(2){left:20%;-webkit-animation-delay:6s,.5s;animation-delay:6s,.5s}.snowflake:nth-of-type(3){left:30%;-webkit-animation-delay:4s,2s;animation-delay:4s,2s}.snowflake:nth-of-type(4){left:40%;-webkit-animation-delay:2s,2s;animation-delay:2s,2s}.snowflake:nth-of-type(5){left:50%;-webkit-animation-delay:8s,3s;animation-delay:8s,3s}.snowflake:nth-of-type(6){left:60%;-webkit-animation-delay:6s,2s;animation-delay:6s,2s}.snowflake:nth-of-type(7){left:70%;-webkit-animation-delay:2.5s,1s;animation-delay:2.5s,1s}.snowflake:nth-of-type(8){left:80%;-webkit-animation-delay:1s,0s;animation-delay:1s,0s}.snowflake:nth-of-type(9){left:90%;-webkit-animation-delay:3s,1.5s;animation-delay:3s,1.5s}
+.demo {
+  font-family: 'Raleway', sans-serif;
+    color:#fff;
+    display: block;
+    margin: 0 auto;
+    padding: 15px 0;
+    text-align: center;
+}
+.demo a{
+  font-family: 'Raleway', sans-serif;
+color: #000;		
+}
+
+#logo {
+    height: 30px;
+    width: 120px;
+}
+
+
+@import url(https://fonts.googleapis.com/css?family=Raleway);
+h4 {
+  font-size: 20px;
+  vertical-align: center;
+  text-align: center;
+}
+
+html, body {
+  margin: 0;
+  height: 100%;
+}
+
+* {
+  font-family: "Raleway";
+  box-sizing: border-box;
+}
+
+h1 {
+  text-align: center;
+}
+
+.top-nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #00BAF0;
+  background: linear-gradient(to left, #f46b45, #eea849);
+  color: #FFF;
+  height: 50px;
+  padding: 1em;
+}
+
+.menu {
+  display: flex;
+  flex-direction: row;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu > li {
+  margin: 0 1rem;
+  overflow: hidden;
+}
+
+.menu-button-container {
+  display: none;
+  height: 100%;
+  width: 30px;
+  cursor: pointer;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#menu-toggle {
+  display: none;
+}
+
+.menu-button,
+.menu-button::before,
+.menu-button::after {
+  display: block;
+  background-color: #fff;
+  position: absolute;
+  height: 4px;
+  width: 30px;
+  transition: transform 400ms cubic-bezier(0.23, 1, 0.32, 1);
+  border-radius: 2px;
+}
+
+.menu-button::before {
+  content: '';
+  margin-top: -8px;
+}
+
+.menu-button::after {
+  content: '';
+  margin-top: 8px;
+}
+
+#menu-toggle:checked + .menu-button-container .menu-button::before {
+  margin-top: 0px;
+  transform: rotate(405deg);
+}
+
+#menu-toggle:checked + .menu-button-container .menu-button {
+  background: rgba(255, 255, 255, 0);
+}
+
+#menu-toggle:checked + .menu-button-container .menu-button::after {
+  margin-top: 0px;
+  transform: rotate(-405deg);
+}
+
+@media (max-width: 700px) {
+  .menu-button-container {
+    display: flex;
+  }
+  .menu {
+    position: absolute;
+    top: 0;
+    margin-top: 50px;
+    left: 0;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+  #menu-toggle ~ .menu li {
+    height: 0;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  #menu-toggle:checked ~ .menu li {
+    border: 1px solid #333;
+    height: 2.5em;
+    padding: 0.5em;
+    transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  .menu > li {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0.5em 0;
+    width: 100%;
+    color: rgb(0, 0, 0);
+    background-color: #f27946;
+  }
+  .menu > li:not(:last-child) {
+    border-bottom: 1px solid #444;
+  }
+}
+
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700);
+main {
+  background: #EEE;
+  width: 600px;
+  margin: 20px auto;
+  padding: 10px 0;
+  box-shadow: 0 3px 5px rgba(0,0,0,0.3);
+}
+h2 {
+  text-align: center;
+}
+p {
+  font-size: 13px;
+}
+input {
+  display: none;
+  visibility: hidden;
+}
+label {
+  display: block;
+  padding: 0.5em;
+  text-align: center;
+  border-bottom: 1px solid #CCC;
+  color: rgb(30, 30, 29);
+}
+label:hover {
+  color: #000;
+}
+label::before {
+  font-family: Consolas, monaco, monospace;
+  font-weight: bold;
+  font-size: 15px;
+  content: "+";
+  vertical-align: text-top;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-right: 3px;
+  background: radial-gradient(ellipse at center, #CCC 50%, transparent 50%);
+}
+#expand {
+  height: 0px;
+  overflow: hidden;
+  transition: height 0.5s;
+  background: url(../SNOWCASTLE/imgs/bg2.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  color: rgb(255, 255, 255);
+}
+section {
+  padding: 0 20px;
+}
+#toggle:checked ~ #expand {
+  height: 250px;
+}
+#toggle:checked ~ label::before {
+  content: "-";
+}
+
+@import url(https://fonts.googleapis.com/css?family=Montserrat:500);
+
+:root {
+  font-size: 10px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+
+
+.containers {
+  max-width: 100rem;
+  margin: 0 auto;
+  padding: 0 2rem 2rem;
+}
+
+.heading {
+  margin-top: 10px;;
+  font-family: "Montserrat", Arial, sans-serif;
+  font-size: 4rem;
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: center;
+  padding: 3.5rem 0;
+  color: #1a1a1a;
+}
+
+.heading span {
+  display: block;
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  margin: -1rem -1rem;
+}
+
+.gallery-item {
+  flex: 1 0 24rem;
+  margin: 1rem;
+  box-shadow: 0.3rem 0.4rem 0.4rem rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+}
+
+.gallery-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 400ms ease-out;
+}
+
+.gallery-image:hover {
+  transform: scale(1.15);
+}
+
+
+@supports (display: grid) {
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(24rem, 1fr));
+    grid-gap: 2rem;
+  }
+
+  .gallery,
+  .gallery-item {
+    margin: 0;
+  }
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+a:hover {
+  color: #e69695;
+}
+li {
+  list-style: none;
+}
+h2 {
+  font-weight: normal;
+
+}
+.container {
+  margin: 20px auto;
+  background-color: #fff;
+  overflow: hidden;
+  border-radius: 4px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2), 0 2px 3px rgba(0,0,0,0.4);
+}
+.container .icon {
+  background-image: url('https://res.cloudinary.com/dw369yzsh/image/upload/v1483213851/icons_wykol9.png');
+  width: 27px;
+  height: 30px;
+}
+.calendar th, .graph {
+  font-family: "Gotham Medium", sans-serif;
+  color: #666666;
+}
+.container button {
+  text-transform: uppercase;
+  border: none;
+  background-color: #fb6362;
+  color: #fff;
+  margin: 0 auto;
+  display: block;
+  box-shadow: 0 3px 5px rgba(0,0,0,0.2), 0 1px 2px rgba(0,0,0,0.8);
+  border-radius: 4px;
+  font-size: 15px;
+  font-family: "Gotham Book", sans-serif;
+  cursor: pointer;
+  -webkit-transition: background-color 0.2s; 
+     -moz-transition: background-color 0.2s; 
+    -ms-transition: background-color 0.2s; 
+     -o-transition: background-color 0.2s; 
+      transition: background-color 0.2s; 
+}
+.container button:hover {
+  background-color: #f98584;
+}
+.container button:active {
+  background-color: #f98584;
+  position: relative;
+  top: 2px;
+}
+button.button-big {
+  width: 296px;
+  height: 58px;
+}
+.input-text {
+  border-radius: 2px;
+  background-color: #f4f4f4;
+  box-shadow: inset 0px 1px 1px 0px rgba(0, 0, 0, 0.25);
+  padding-left: 11px;
+  position: relative;
+  height: 46px;
+  line-height: 46px;
+}
+.input-text .icon {
+  position: absolute;
+  right: 4px;
+  top: 4px;
+}
+.input-text input, .input-text textarea, .div-file label {
+  border: none;
+  background-color: transparent;
+  font-family: "Gotham Light", sans-serif;
+  color:#999999;
+}
+
+.container .input-text input::-webkit-input-placeholder, .container .input-text textarea::-webkit-input-placeholder {
+  color:#999999;
+  font-family: "Gotham Light", sans-serif;
+  font-size: 14px;
+}
+.container .input-text input::-moz-placeholder, .container .input-text textarea::-moz-placeholder {
+  color:#999999;
+  font-family: "Gotham Light", sans-serif;
+  font-size: 14px;
+}
+.container .input-text input:-moz-placeholder, .container .input-text textarea:-moz-placeholder {
+  color:#999999;
+  font-family: "Gotham Light", sans-serif;
+  font-size: 14px;
+}
+.container .input-text input:-ms-input-placeholder, .container .input-text textarea:-ms-input-placeholder {
+  color:#999999;
+  font-family: "Gotham Light", sans-serif;
+  font-size: 14px;
+}
+
+.text-center {
+  text-align: center;
+  margin-bottom: 10px;
+  padding: 20px;
+}
+
+
+
