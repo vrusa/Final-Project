@@ -206,7 +206,7 @@ label::before {
   height: 0px;
   overflow: hidden;
   transition: height 0.5s;
-  background: url(../SNOWCASTLE/imgs/bg2.jpg);
+  background: url(imgs/bg2.jpg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100%;
